@@ -32,12 +32,12 @@ terraform output -raw rds_admin_username
 Then in Vault (on Parallels):
 ```bash
 vault secrets enable database
-vault write database/config/swift-lab \
+vault write database/config/-lab \
   plugin_name=postgresql-database-plugin \
   connection_url="postgresql://{{username}}:{{password}}@<endpoint>/vaultdemo?sslmode=require" \
   allowed_roles="app" username="vaultadmin" password="<admin-password>"
 vault write database/roles/app \
-  db_name=swift-lab \
+  db_name=-lab \
   creation_statements="CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';" \
   default_ttl="1h" max_ttl="24h"
 vault read database/creds/app     # <- watch a real, expiring DB user appear in RDS
