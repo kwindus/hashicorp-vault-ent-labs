@@ -1,6 +1,6 @@
-# swift-lab-aws
+# Vault-lab-aws
 
-Terraform for the **AWS half** of the SWIFT Vault study lab. No Vault clusters
+Terraform for the **AWS half** of the  Vault study lab. No Vault clusters
 live here — those run on Parallels. This stack provisions only the things Vault
 *talks to* (an RDS Postgres target), the CI integration (a GitHub Actions
 runner), a credit-earning Lambda, and the **cost-control scaffolding** (budget,
